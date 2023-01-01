@@ -1,11 +1,16 @@
+import os
 import discord
 from discord import app_commands
 from discord.ext import commands
-from config import TOKEN
+from .env import Token
+
+load_.env
+
+Token = os.getenv('Token')
 
 bot = commands.bot(command_prefix="!", intents = discord.Intents.all())
 
-TOKEN.run("MTA1OTE0MDg2MjMyMTM2OTEyOQ.GPZKmX.WLF4uy0G8OKP8jhGkRkBBKcOEojezrjxZ0C1V0")
+
 
 @bot.event
 async def on_ready():
@@ -25,4 +30,5 @@ async def hello(interaction: discord.interaction):
     async def say(interaction: discord.Interaction, thing_to_say: str):
         await interaction.response.send_message(f"{interaction.user.name} said: `{thing_to_say}` ")
 
-bot.run(TOKEN) 
+
+bot.run(Token) 
