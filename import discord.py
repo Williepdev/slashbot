@@ -2,11 +2,12 @@ import os
 import discord
 from discord import app_commands
 from discord.ext import commands
-from .env import Token
+from dotenv import load_dotenv
 
-load_.env
+load_dotenv()
 
-Token = os.getenv('Token')
+TOKEN = os.getenv("DISCORD_TOKEN")
+
 
 bot = commands.bot(command_prefix="!", intents = discord.Intents.all())
 
@@ -31,4 +32,4 @@ async def hello(interaction: discord.interaction):
         await interaction.response.send_message(f"{interaction.user.name} said: `{thing_to_say}` ")
 
 
-bot.run(Token) 
+
