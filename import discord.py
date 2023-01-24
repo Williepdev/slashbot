@@ -31,5 +31,5 @@ async def hello(interaction: discord.interaction):
     async def say(interaction: discord.Interaction, thing_to_say: str):
         await interaction.response.send_message(f"{interaction.user.name} said: `{thing_to_say}` ")
 
-
+bot.run(TOKEN)
 
